@@ -55,7 +55,7 @@ data:extend({
   },
   {
     type = "int-setting",
-    name = "ReStack-fuel-cell",
+    name = "ReStack-nuclear-fuel",
     order = "ca",
     setting_type = "startup",
     default_value = 5,

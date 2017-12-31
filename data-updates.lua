@@ -21,13 +21,14 @@ require("modules.ammo")
 for _, group in pairs(data.raw) do
   for item_name, item in pairs(group) do
     if item.rocket_launch_product then
-      Launch_Products[item.rocket_launch_product[1]] = item.rocket_launch_product[2]      
+      Launch_Products[item.rocket_launch_product[1]] = item.rocket_launch_product[2]
     end
   end
-end 
-  
+end
+
   -- apply new stack_size to anything with matching name
-for _, group in pairs(data.raw) do  
+-- log(serpent.block(ReStack_Items))
+for _, group in pairs(data.raw) do
   for item_name, stack_data in pairs(ReStack_Items) do
     local item = group[item_name]
     if item and item.stack_size then
@@ -35,7 +36,7 @@ for _, group in pairs(data.raw) do
         item.stack_size = ReStack_Items[item_name].stack_size
         log("[RS] Setting "..tostring(stack_data.type).."."..tostring(item_name)..".stack_size "..stack_data.stack_size)
       else
-        log("[RS] Skipping rocket launch produkt "..tostring(stack_data.type).."."..tostring(item_name))
+        log("[RS] Skipping rocket-launch-produkt "..tostring(stack_data.type).."."..tostring(item_name))
       end
     end
   end
