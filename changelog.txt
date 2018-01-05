@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.3.9
+Date: 5.1.2018
+  Features:
+    - added electric poles    
+    - added arithmetic, decider and constant combinator
+    - added red & green wire
+---------------------------------------------------------------------------------------------------
 Version: 0.3.8
 Date: 31.12.2017
   Features:
