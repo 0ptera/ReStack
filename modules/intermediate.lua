@@ -26,13 +26,15 @@ for _,recipe in pairs(data.raw.recipe) do
     for _, ingredient in pairs(recipe.ingredients) do
       ReStack_Items[ingredient[1]] = {stack_size = settings.startup["ReStack-rocket-parts"].value, type = "rocket-part"}
     end
-  end
+  end  
 end
+
+-- Solid Fuel
+ReStack_Items["solid-fuel"] = {stack_size = settings.startup["ReStack-solid-fuel"].value, type = "solid-fuel"}
 
 -- refined Uranium
 ReStack_Items["uranium-235"] = {stack_size = settings.startup["ReStack-uranium"].value, type = "uranium"}
 ReStack_Items["uranium-238"] = {stack_size = settings.startup["ReStack-uranium"].value, type = "uranium"}
-
 
 for _,item in pairs(data.raw.item) do
   -- nuclear fuel & waste products

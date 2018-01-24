@@ -1,8 +1,15 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.3.10
+Date: 24.1.2018
+  Features:
+    - added solid fuel
+  Changes:
+    - moved all action into data-final-fixes
+---------------------------------------------------------------------------------------------------
 Version: 0.3.9
 Date: 5.1.2018
   Features:
-    - added electric poles    
+    - added electric poles
     - added arithmetic, decider and constant combinator
     - added red & green wire
 ---------------------------------------------------------------------------------------------------

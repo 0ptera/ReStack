@@ -55,8 +55,17 @@ data:extend({
   },
   {
     type = "int-setting",
-    name = "ReStack-nuclear-fuel",
+    name = "ReStack-solid-fuel",
     order = "ca",
+    setting_type = "startup",
+    default_value = 50,
+    minimum_value = 1,
+    maximum_value = 10000,
+  },  
+  {
+    type = "int-setting",
+    name = "ReStack-nuclear-fuel",
+    order = "cb",
     setting_type = "startup",
     default_value = 5,
     minimum_value = 1,
@@ -65,7 +74,7 @@ data:extend({
   {
     type = "int-setting",
     name = "ReStack-rocket-parts",
-    order = "cb",
+    order = "cc",
     setting_type = "startup",
     default_value = 10,
     minimum_value = 1,
@@ -74,7 +83,7 @@ data:extend({
   {
     type = "int-setting",
     name = "ReStack-science-pack",
-    order = "cc",
+    order = "cd",
     setting_type = "startup",
     default_value = 200,
     minimum_value = 1,
