@@ -10,23 +10,13 @@ SelectItemByEntity("resource", settings.startup["ReStack-ores"].value)
 for _,recipe in pairs(data.raw.recipe) do
   -- Plate stack size
   if recipe.category == "smelting" then
-    if recipe.result or (recipe.normal and recipe.normal.result) then
-      local item = recipe.result or recipe.normal.result
-      ReStack_Items[item] = {stack_size = settings.startup["ReStack-plates"].value, type = "smelting"}
-    elseif recipe.results or (recipe.normal and recipe.normal.results) then
-      local results = recipe.results or recipe.normal.results -- is normal.results even possible?
-      for _, result in pairs(results) do
-        ReStack_Items[result.name] = {stack_size = settings.startup["ReStack-plates"].value, type = "smelting"}
-      end
-    end
+    SelectItemsByRecipeResult(recipe, settings.startup["ReStack-plates"].value, "smelting")
   end
 
   --Rocket Parts
   if recipe.category == "rocket-building" then
-    for _, ingredient in pairs(recipe.ingredients) do
-      ReStack_Items[ingredient[1]] = {stack_size = settings.startup["ReStack-rocket-parts"].value, type = "rocket-part"}
-    end
-  end  
+    SelectItemsByRecipeInput(recipe, settings.startup["ReStack-rocket-parts"].value, "rocket-part")
+  end
 end
 
 -- Solid Fuel
@@ -38,7 +28,7 @@ ReStack_Items["uranium-238"] = {stack_size = settings.startup["ReStack-uranium"]
 
 for _,item in pairs(data.raw.item) do
   -- nuclear fuel & waste products
-  if item.fuel_category == "nuclear" then    
+  if item.fuel_category == "nuclear" then
     ReStack_Items[item.name] = {stack_size = settings.startup["ReStack-nuclear-fuel"].value, type = "nuclear-fuel"}
     if burnt_result then ReStack_Items[burnt_result] = {stack_size = settings.startup["ReStack-nuclear-fuel"].value, type = "nuclear-fuel"} end
   end
