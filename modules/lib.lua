@@ -30,8 +30,10 @@ end
 
 function SelectItemsByRecipeInput(recipe, stack_size, category)
   if recipe.ingredients then
-    for _, ingredient in pairs(recipe.ingredients) do      
-      ReStack_Items[ingredient[1]] = {stack_size = stack_size, type = category}
+    for n, ingredient in pairs(recipe.ingredients) do          
+      if ingredient[1] then
+        ReStack_Items[ingredient[1]] = {stack_size = stack_size, type = category}
+      end
     end
   end
 end
