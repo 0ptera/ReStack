@@ -14,9 +14,24 @@ SelectItemByEntity("electric-pole", settings.startup["ReStack-electric-pole"].va
 
 SelectItemByEntity("roboport", settings.startup["ReStack-roboport"].value)
 
-for _, rail in pairs(data.raw["rail-planner"]) do
-  ReStack_Items[rail.name] = {stack_size = settings.startup["ReStack-rail"].value, type = "rail"} -- inefficient but looks better in log
+SelectItemByEntity("logistic-robot", settings.startup["ReStack-robot"].value)
+SelectItemByEntity("construction-robot", settings.startup["ReStack-robot"].value)
+
+for _, item in pairs(data.raw["rail-planner"]) do
+  ReStack_Items[item.name] = {stack_size = settings.startup["ReStack-rail"].value, type = "rail"} -- inefficient but looks better in log
 end
+
+SelectItemByEntity("rail-signal", settings.startup["ReStack-rail-signal"].value, "rail-signal")
+SelectItemByEntity("rail-chain-signal", settings.startup["ReStack-rail-signal"].value, "rail-signal")
+
+SelectItemByEntity("train-stop", settings.startup["ReStack-train-stop"].value, "train-stop")
+
+SelectItemByEntity("locomotive", settings.startup["ReStack-train-carriage"].value, "train-carriage")
+SelectItemByEntity("cargo-wagon", settings.startup["ReStack-train-carriage"].value, "train-carriage")
+SelectItemByEntity("fluid-wagon", settings.startup["ReStack-train-carriage"].value, "train-carriage")
+SelectItemByEntity("artillery-wagon", settings.startup["ReStack-train-carriage"].value, "train-carriage")
+
+SelectItemByEntity("car", settings.startup["ReStack-car"].value)
 
 SelectItemByEntity("arithmetic-combinator", settings.startup["ReStack-combinator"].value)
 SelectItemByEntity("decider-combinator", settings.startup["ReStack-combinator"].value)
@@ -24,3 +39,4 @@ SelectItemByEntity("constant-combinator", settings.startup["ReStack-combinator"]
 
 ReStack_Items["red-wire"] = {stack_size = settings.startup["ReStack-wire"].value, type = "wire"}
 ReStack_Items["green-wire"] = {stack_size = settings.startup["ReStack-wire"].value, type = "wire"}
+ReStack_Items["copper-cable"] = {stack_size = settings.startup["ReStack-wire"].value, type = "wire"}

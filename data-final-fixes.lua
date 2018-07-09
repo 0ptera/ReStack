@@ -26,7 +26,7 @@ for _, group in pairs(data.raw) do
   end
 end
 
-  -- apply new stack_size to anything with matching name
+-- apply new stack_size to anything with matching name
 -- log(serpent.block(ReStack_Items))
 for _, group in pairs(data.raw) do
   for item_name, stack_data in pairs(ReStack_Items) do

@@ -6,7 +6,6 @@ ReStack_Items["raw-wood"] = {stack_size = settings.startup["ReStack-wood"].value
 -- Ore Stack Size
 SelectItemByEntity("resource", settings.startup["ReStack-ores"].value)
 
-
 for _,recipe in pairs(data.raw.recipe) do
   -- Plate stack size
   if recipe.category == "smelting" then
