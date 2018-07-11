@@ -1,4 +1,4 @@
-local function add_from_item_array(items, stack_size, category)
+function add_from_item_array(items, stack_size, category)
   for _, item in pairs(items) do
     if item.name and ( not item.type or item.type == "item") then
       ReStack_Items[item.name] = {stack_size = stack_size, type = category}
