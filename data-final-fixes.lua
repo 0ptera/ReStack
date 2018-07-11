@@ -9,8 +9,6 @@ Tile_Whitelist = {  -- always apply tile stack size
 require("modules.logistic")
 require("modules.production")
 require("modules.intermediate")
-require("modules.science_pack")
--- require("modules.combat")
 
 -- modules setting stacks themself
 require("modules.barrel")
