@@ -30,11 +30,11 @@ for _, group in pairs(data.raw) do
   for item_name, stack_data in pairs(ReStack_Items) do
     local item = group[item_name]
     if item and item.stack_size then
-      if settings.startup["ReStack-include-launch-products"].value or not Launch_Products[item_name] then
-        item.stack_size = ReStack_Items[item_name].stack_size
-        log("[RS] Setting "..tostring(stack_data.type).."."..tostring(item_name)..".stack_size "..stack_data.stack_size)
-      else
-        log("[RS] Skipping rocket-launch-produkt "..tostring(stack_data.type).."."..tostring(item_name))
+      if ReStack_Items[item_name].stack_size > 0 and (settings.startup["ReStack-include-launch-products"].value or not Launch_Products[item_name]) then
+        log("[RS] Setting "..tostring(stack_data.type).."."..tostring(item_name)..".stack_size "..item.stack_size.." -> "..stack_data.stack_size)
+        item.stack_size = ReStack_Items[item_name].stack_size        
+      -- else
+        -- log("[RS] Skipping "..tostring(stack_data.type).."."..tostring(item_name))
       end
     end
   end

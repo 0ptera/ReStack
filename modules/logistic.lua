@@ -8,6 +8,9 @@ SelectItemByEntity("loader", settings.startup["ReStack-belt"].value)
 SelectItemByEntity("pipe", settings.startup["ReStack-pipe"].value)
 SelectItemByEntity("pipe-to-ground", settings.startup["ReStack-pipe"].value)
 
+SelectItemByEntity("container", settings.startup["ReStack-container"].value)
+SelectItemByEntity("logistic-container", settings.startup["ReStack-container"].value)
+
 SelectItemByEntity("inserter", settings.startup["ReStack-inserter"].value)
 
 SelectItemByEntity("electric-pole", settings.startup["ReStack-electric-pole"].value)

@@ -1,4 +1,43 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.5.2
+Date: 3.3.2019
+  Bugfixes:
+    - skip over barrel recipes lacking ingredients and results, https://mods.factorio.com/mod/ReStack/discussion/5c7bd343961aa5000cbdc1ae
+---------------------------------------------------------------------------------------------------
+Version: 0.5.1
+Date: 27.2.2019
+  Bugfixes:
+    - accounted for raw-wood having been renamed to wood
+---------------------------------------------------------------------------------------------------
+Version: 0.5.0
+Date: 27.2.2019
+  Features:
+    - updated to Factorio 0.17
+    - setting an option to 0 disables resetting stack size 
+    - settings previously defaulting to base stack size now default to 0
+---------------------------------------------------------------------------------------------------
+Version: 0.4.4
+Date: 21.12.2018
+  Features:
+    - barrel settings work on gas bottles and canisters from BobPlates
+    - barrel settings work on DirtyBarrels
+---------------------------------------------------------------------------------------------------
+Version: 0.4.3
+Date: 20.8.2018
+  Features:
+    - added nuclear fuel
+  Bugfixes:
+    - stack size wasn't applied to Used up uranium fuel cell
+    - Description for Reactor fuels
+  Changes:
+    - internal name for reactor fuel mapped to nuclear fuel
+    - new internal name for reactor fuel
+---------------------------------------------------------------------------------------------------
+Version: 0.4.2
+Date: 19.8.2018
+  Features:
+    - added chests
+---------------------------------------------------------------------------------------------------
 Version: 0.4.1
 Date: 11.7.2018
   Bugfixes:

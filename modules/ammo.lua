@@ -1,9 +1,11 @@
 -- Get ammo by category and set stack size
 local function SetByAmmoCategory(type, stack_size)
-  for _, ammo in pairs(data.raw.ammo) do
-    if ammo.ammo_type.category == type then
-      ammo.stack_size = stack_size
-      log("[RS] Setting "..tostring(type).."."..tostring(ammo.name)..".stack_size "..stack_size)
+  if stack_size > 0 then
+    for _, ammo in pairs(data.raw.ammo) do
+      if ammo.ammo_type.category == type then
+        log("[RS] Setting "..tostring(type).."."..tostring(ammo.name)..".stack_size "..ammo.stack_size.." -> "..stack_size)
+        ammo.stack_size = stack_size
+      end
     end
   end
 end

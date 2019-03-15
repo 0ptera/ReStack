@@ -7,7 +7,7 @@ data:extend({
     order = "aa",
     setting_type = "startup",
     default_value = 500,
-    minimum_value = 1,
+    minimum_value = 0,
     maximum_value = 10000,
   },
   {
@@ -22,8 +22,8 @@ data:extend({
     name = "ReStack-wood",
     order = "ba",
     setting_type = "startup",
-    default_value = 100,
-    minimum_value = 1,
+    default_value = 0,
+    minimum_value = 0,
     maximum_value = 10000,
   },
   {
@@ -32,7 +32,7 @@ data:extend({
     order = "bb",
     setting_type = "startup",
     default_value = 100,
-    minimum_value = 1,
+    minimum_value = 0,
     maximum_value = 10000,
   },
   {
@@ -40,8 +40,8 @@ data:extend({
     name = "ReStack-plates",
     order = "bc",
     setting_type = "startup",
-    default_value = 100,
-    minimum_value = 1,
+    default_value = 0,
+    minimum_value = 0,
     maximum_value = 10000,
   },
   {
@@ -49,8 +49,8 @@ data:extend({
     name = "ReStack-modules",
     order = "be",
     setting_type = "startup",
-    default_value = 50,
-    minimum_value = 1,
+    default_value = 0,
+    minimum_value = 0,
     maximum_value = 10000,
   },
   {
@@ -58,8 +58,8 @@ data:extend({
     name = "ReStack-uranium",
     order = "bf",
     setting_type = "startup",
-    default_value = 100,
-    minimum_value = 1,
+    default_value = 0,
+    minimum_value = 0,
     maximum_value = 10000,
   },
   {
@@ -67,8 +67,8 @@ data:extend({
     name = "ReStack-solid-fuel",
     order = "ca",
     setting_type = "startup",
-    default_value = 50,
-    minimum_value = 1,
+    default_value = 0,
+    minimum_value = 0,
     maximum_value = 10000,
   },
   {
@@ -76,32 +76,41 @@ data:extend({
     name = "ReStack-nuclear-fuel",
     order = "cb",
     setting_type = "startup",
+    default_value = 0,
+    minimum_value = 0,
+    maximum_value = 10000,
+  },  
+  {
+    type = "int-setting",
+    name = "ReStack-fuel-category-nuclear",
+    order = "cc",
+    setting_type = "startup",
     default_value = 5,
-    minimum_value = 1,
+    minimum_value = 0,
     maximum_value = 10000,
   },
   {
     type = "int-setting",
     name = "ReStack-rocket-parts",
-    order = "cc",
+    order = "cd",
     setting_type = "startup",
-    default_value = 10,
-    minimum_value = 1,
+    default_value = 0,
+    minimum_value = 0,
     maximum_value = 10000,
   },
   {
     type = "int-setting",
     name = "ReStack-science-pack",
-    order = "cd",
+    order = "ce",
     setting_type = "startup",
-    default_value = 200,
-    minimum_value = 1,
+    default_value = 0,
+    minimum_value = 0,
     maximum_value = 10000,
   },
   {
     type = "bool-setting",
     name = "ReStack-include-launch-products",
-    order = "cd",
+    order = "cf",
     setting_type = "startup",
     default_value = false,
   },
@@ -114,7 +123,7 @@ data:extend({
     order = "da",
     setting_type = "startup",
     default_value = 5, -- Original = 10
-    minimum_value = 1,
+    minimum_value = 0,
     maximum_value = 10000,
   },
   {
@@ -123,7 +132,7 @@ data:extend({
     order = "db",
     setting_type = "startup",
     default_value = 100, -- Original = 50
-    minimum_value = 1,
+    minimum_value = 0,
     maximum_value = 10000,
   },
 
@@ -134,8 +143,8 @@ data:extend({
     name = "ReStack-belt",
     order = "ea",
     setting_type = "startup",
-    default_value = 100,
-    minimum_value = 1,
+    default_value = 0,
+    minimum_value = 0,
     maximum_value = 10000,
   },
   -- {
@@ -150,8 +159,17 @@ data:extend({
     name = "ReStack-pipe",
     order = "ec",
     setting_type = "startup",
-    default_value = 100,
-    minimum_value = 1,
+    default_value = 0,
+    minimum_value = 0,
+    maximum_value = 10000,
+  },
+  {
+    type = "int-setting",
+    name = "ReStack-container",
+    order = "ed",
+    setting_type = "startup",
+    default_value = 0,
+    minimum_value = 0,
     maximum_value = 10000,
   },
   {
@@ -159,8 +177,8 @@ data:extend({
     name = "ReStack-inserter",
     order = "ee",
     setting_type = "startup",
-    default_value = 50,
-    minimum_value = 1,
+    default_value = 0,
+    minimum_value = 0,
     maximum_value = 10000,
   },
   {
@@ -168,8 +186,8 @@ data:extend({
     name = "ReStack-electric-pole",
     order = "ef",
     setting_type = "startup",
-    default_value = 50,
-    minimum_value = 1,
+    default_value = 0,
+    minimum_value = 0,
     maximum_value = 10000,
   },
   {
@@ -177,8 +195,8 @@ data:extend({
     name = "ReStack-roboport",
     order = "eg",
     setting_type = "startup",
-    default_value = 20,
-    minimum_value = 1,
+    default_value = 0,
+    minimum_value = 0,
     maximum_value = 10000,
   },
   {
@@ -186,8 +204,8 @@ data:extend({
     name = "ReStack-robot",
     order = "eh",
     setting_type = "startup",
-    default_value = 100,
-    minimum_value = 1,
+    default_value = 0,
+    minimum_value = 0,
     maximum_value = 10000,
   },
   {
@@ -196,7 +214,7 @@ data:extend({
     order = "ei",
     setting_type = "startup",
     default_value = 200,
-    minimum_value = 1,
+    minimum_value = 0,
     maximum_value = 10000,
   },
   {
@@ -204,8 +222,8 @@ data:extend({
     name = "ReStack-rail-signal",
     order = "ej",
     setting_type = "startup",
-    default_value = 50,
-    minimum_value = 1,
+    default_value = 0,
+    minimum_value = 0,
     maximum_value = 10000,
   },
   {
@@ -213,8 +231,8 @@ data:extend({
     name = "ReStack-train-stop",
     order = "ek",
     setting_type = "startup",
-    default_value = 10,
-    minimum_value = 1,
+    default_value = 0,
+    minimum_value = 0,
     maximum_value = 10000,
   },
   {
@@ -222,8 +240,8 @@ data:extend({
     name = "ReStack-train-carriage",
     order = "el",
     setting_type = "startup",
-    default_value = 5,
-    minimum_value = 1,
+    default_value = 0,
+    minimum_value = 0,
     maximum_value = 10000,
   },
   {
@@ -231,8 +249,8 @@ data:extend({
     name = "ReStack-car",
     order = "em",
     setting_type = "startup",
-    default_value = 5,
-    minimum_value = 1,
+    default_value = 0,
+    minimum_value = 0,
     maximum_value = 10000,
   },
   {
@@ -240,8 +258,8 @@ data:extend({
     name = "ReStack-combinator",
     order = "en",
     setting_type = "startup",
-    default_value = 50,
-    minimum_value = 1,
+    default_value = 0,
+    minimum_value = 0,
     maximum_value = 10000,
   },
   {
@@ -249,8 +267,8 @@ data:extend({
     name = "ReStack-wire",
     order = "eo",
     setting_type = "startup",
-    default_value = 200,
-    minimum_value = 1,
+    default_value = 0,
+    minimum_value = 0,
     maximum_value = 10000,
   },
   ---- PRODUCTION -----
@@ -261,7 +279,7 @@ data:extend({
     order = "fa",
     setting_type = "startup",
     default_value = 10,
-    minimum_value = 1,
+    minimum_value = 0,
     maximum_value = 10000,
   },
   {
@@ -270,7 +288,7 @@ data:extend({
     order = "fc",
     setting_type = "startup",
     default_value = 20,
-    minimum_value = 1,
+    minimum_value = 0,
     maximum_value = 10000,
   },
   {
@@ -279,7 +297,7 @@ data:extend({
     order = "fd",
     setting_type = "startup",
     default_value = 20,
-    minimum_value = 1,
+    minimum_value = 0,
     maximum_value = 10000,
   },
   {
@@ -288,7 +306,7 @@ data:extend({
     order = "fe",
     setting_type = "startup",
     default_value = 20,
-    minimum_value = 1,
+    minimum_value = 0,
     maximum_value = 10000,
   },
 
@@ -299,8 +317,8 @@ data:extend({
     name = "ReStack-ammo-bullet", -- ammo_type.category = "bullet"
     order = "ha",
     setting_type = "startup",
-    default_value = 200, --base: 200
-    minimum_value = 1,
+    default_value = 0, --base: 200
+    minimum_value = 0,
     maximum_value = 10000,
   },
   {
@@ -308,8 +326,8 @@ data:extend({
     name = "ReStack-ammo-shotgun", -- ammo_type.category = "shotgun-shell"
     order = "hb",
     setting_type = "startup",
-    default_value = 200, -- base: 200
-    minimum_value = 1,
+    default_value = 0, -- base: 200
+    minimum_value = 0,
     maximum_value = 10000,
   },
   {
@@ -317,8 +335,8 @@ data:extend({
     name = "ReStack-ammo-cannon", -- ammo_type.category = "cannon-shell"
     order = "hc",
     setting_type = "startup",
-    default_value = 200, --base: 200
-    minimum_value = 1,
+    default_value = 0, --base: 200
+    minimum_value = 0,
     maximum_value = 10000,
   },
   {
@@ -327,7 +345,7 @@ data:extend({
     order = "hd",
     setting_type = "startup",
     default_value = 10, --base: 1
-    minimum_value = 1,
+    minimum_value = 0,
     maximum_value = 10000,
   },
   {
@@ -335,8 +353,8 @@ data:extend({
     name = "ReStack-ammo-rocket", -- ammo_type.category = "rocket"
     order = "he",
     setting_type = "startup",
-    default_value = 200, -- base: 200-10
-    minimum_value = 1,
+    default_value = 0, -- base: 200-10
+    minimum_value = 0,
     maximum_value = 10000,
   },
   {
@@ -344,8 +362,8 @@ data:extend({
     name = "ReStack-ammo-flamethrower", -- ammo_type.category = "flamethrower"
     order = "hf",
     setting_type = "startup",
-    default_value = 100, -- base: 100
-    minimum_value = 1,
+    default_value = 0, -- base: 100
+    minimum_value = 0,
     maximum_value = 10000,
   },
 
