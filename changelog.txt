@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.5.3
+Date: 25.3.2019
+  Features:
+    - added walls and gates
+---------------------------------------------------------------------------------------------------
 Version: 0.5.2
 Date: 3.3.2019
   Bugfixes:
@@ -13,7 +18,7 @@ Version: 0.5.0
 Date: 27.2.2019
   Features:
     - updated to Factorio 0.17
-    - setting an option to 0 disables resetting stack size 
+    - setting an option to 0 disables resetting stack size
     - settings previously defaulting to base stack size now default to 0
 ---------------------------------------------------------------------------------------------------
 Version: 0.4.4

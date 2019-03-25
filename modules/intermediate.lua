@@ -23,7 +23,7 @@ for _, tech in pairs(data.raw.technology) do
 end
 
   -- nuclear fuel category & waste products
-for _,item in pairs(data.raw.item) do  
+for _,item in pairs(data.raw.item) do
   if item.fuel_category == "nuclear" then
     ReStack_Items[item.name] = {stack_size = settings.startup["ReStack-fuel-category-nuclear"].value, type = "fuel-category-nuclear"}
     if item.burnt_result then
@@ -41,9 +41,12 @@ ReStack_Items["wood"] = {stack_size = settings.startup["ReStack-wood"].value, ty
 ReStack_Items["solid-fuel"] = {stack_size = settings.startup["ReStack-solid-fuel"].value, type = "solid-fuel"}
 ReStack_Items["nuclear-fuel"] = {stack_size = settings.startup["ReStack-nuclear-fuel"].value, type = "nuclear-fuel"}
 
+--Walls and gates
+SelectItemByEntity("wall", settings.startup["ReStack-wall"].value)
+SelectItemByEntity("gate", settings.startup["ReStack-wall"].value, "wall")
 
--- Tiles - applied last to overwrite when wood, ore, asf is directly used as floor
-for _,item in pairs(data.raw.item) do  
+-- Tiles - applied last to overwrite when wood or ore is directly used as floor
+for _,item in pairs(data.raw.item) do
   if item.place_as_tile and (Tile_Whitelist[item.name] or (settings.startup["ReStack-tiles-priority"].value or not ReStack_Items[item.name])) then
     ReStack_Items[item.name] = {stack_size = settings.startup["ReStack-tiles"].value, type = "tile"}
   end

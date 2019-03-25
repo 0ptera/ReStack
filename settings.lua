@@ -79,7 +79,7 @@ data:extend({
     default_value = 0,
     minimum_value = 0,
     maximum_value = 10000,
-  },  
+  },
   {
     type = "int-setting",
     name = "ReStack-fuel-category-nuclear",
@@ -361,6 +361,15 @@ data:extend({
     type = "int-setting",
     name = "ReStack-ammo-flamethrower", -- ammo_type.category = "flamethrower"
     order = "hf",
+    setting_type = "startup",
+    default_value = 0, -- base: 100
+    minimum_value = 0,
+    maximum_value = 10000,
+  },
+  {
+    type = "int-setting",
+    name = "ReStack-wall",
+    order = "ia",
     setting_type = "startup",
     default_value = 0, -- base: 100
     minimum_value = 0,

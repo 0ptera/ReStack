@@ -8,7 +8,7 @@ function add_from_item_array(items, stack_size, category)
   end
 end
 
--- sets stacks for items asociated with an entity or resource
+-- sets stacks for items associated with an entity or resource
 function SelectItemByEntity(ent_type, stack_size, category)
   category = category or ent_type
   for _, entity in pairs(data.raw[ent_type]) do
