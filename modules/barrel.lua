@@ -1,3 +1,9 @@
+--[[ Copyright (c) 2018 Optera
+ * Part of Re-Stack
+ *
+ * See LICENSE.md in the project directory for license information.
+--]]
+
 -- Barrel stack and capacity
 -- filled barrels are auto generated from fluids in base\data-updates.lua
 local barrel_stack_size = settings.startup["ReStack-barrel-stack"].value

@@ -1,4 +1,8 @@
-require("lib")
+--[[ Copyright (c) 2018 Optera
+ * Part of Re-Stack
+ *
+ * See LICENSE.md in the project directory for license information.
+--]]
 
 SelectItemByEntity("reactor", settings.startup["ReStack-reactor"].value)
 

@@ -1,3 +1,9 @@
+--[[ Copyright (c) 2018 Optera
+ * Part of Re-Stack
+ *
+ * See LICENSE.md in the project directory for license information.
+--]]
+
 -- Get ammo by category and set stack size
 local function SetByAmmoCategory(type, stack_size)
   if stack_size > 0 then

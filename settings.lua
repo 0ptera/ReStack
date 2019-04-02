@@ -1,6 +1,11 @@
+--[[ Copyright (c) 2018 Optera
+ * Part of Re-Stack
+ *
+ * See LICENSE.md in the project directory for license information.
+--]]
+
 data:extend({
   ---- INTERMEDIATE ----
-
   {
     type = "int-setting",
     name = "ReStack-tiles",
@@ -137,7 +142,6 @@ data:extend({
   },
 
   ---- LOGISTIC ----
-
   {
     type = "int-setting",
     name = "ReStack-belt",
@@ -271,8 +275,8 @@ data:extend({
     minimum_value = 0,
     maximum_value = 10000,
   },
-  ---- PRODUCTION -----
 
+  ---- PRODUCTION -----
   {
     type = "int-setting",
     name = "ReStack-reactor",
@@ -311,7 +315,6 @@ data:extend({
   },
 
   ---- AMMO ----
-
   {
     type = "int-setting",
     name = "ReStack-ammo-bullet", -- ammo_type.category = "bullet"
@@ -366,10 +369,21 @@ data:extend({
     minimum_value = 0,
     maximum_value = 10000,
   },
+
+  ---- MILITARY ----
+  {
+    type = "int-setting",
+    name = "ReStack-turret",
+    order = "ia",
+    setting_type = "startup",
+    default_value = 0, -- base: 50
+    minimum_value = 0,
+    maximum_value = 10000,
+  },
   {
     type = "int-setting",
     name = "ReStack-wall",
-    order = "ia",
+    order = "ib",
     setting_type = "startup",
     default_value = 0, -- base: 100
     minimum_value = 0,

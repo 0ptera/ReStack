@@ -1,7 +1,11 @@
-require("lib")
+--[[ Copyright (c) 2018 Optera
+ * Part of Re-Stack
+ *
+ * See LICENSE.md in the project directory for license information.
+--]]
 
 -- Ore Stack Size
-SelectItemByEntity("resource", settings.startup["ReStack-ores"].value)
+SelectItemByEntity("resource", settings.startup["ReStack-ores"].value, "ore")
 
 for _,recipe in pairs(data.raw.recipe) do
   -- Plate stack size
@@ -40,10 +44,6 @@ ReStack_Items["uranium-238"] = {stack_size = settings.startup["ReStack-uranium"]
 ReStack_Items["wood"] = {stack_size = settings.startup["ReStack-wood"].value, type = "wood"}
 ReStack_Items["solid-fuel"] = {stack_size = settings.startup["ReStack-solid-fuel"].value, type = "solid-fuel"}
 ReStack_Items["nuclear-fuel"] = {stack_size = settings.startup["ReStack-nuclear-fuel"].value, type = "nuclear-fuel"}
-
---Walls and gates
-SelectItemByEntity("wall", settings.startup["ReStack-wall"].value)
-SelectItemByEntity("gate", settings.startup["ReStack-wall"].value, "wall")
 
 -- Tiles - applied last to overwrite when wood or ore is directly used as floor
 for _,item in pairs(data.raw.item) do

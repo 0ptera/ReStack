@@ -1,3 +1,9 @@
+--[[ Copyright (c) 2018 Optera
+ * Part of Re-Stack
+ *
+ * See LICENSE.md in the project directory for license information.
+--]]
+
 function add_from_item_array(items, stack_size, category)
   for _, item in pairs(items) do
     if item.name and ( not item.type or item.type == "item") then
