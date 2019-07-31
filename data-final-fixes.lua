@@ -27,7 +27,8 @@ require("modules.ammo")
 -- get rocket_launch_product list
 for _, group in pairs(data.raw) do
   for item_name, item in pairs(group) do
-    if item.rocket_launch_product then
+    if item.rocket_launch_product and item.rocket_launch_product[1] and item.rocket_launch_product[2] then
+      -- log("[RS] Launch Product found: "..serpent.block(item.rocket_launch_product))
       Launch_Products[item.rocket_launch_product[1]] = item.rocket_launch_product[2]
     end
   end
