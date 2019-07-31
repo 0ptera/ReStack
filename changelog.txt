@@ -3,6 +3,7 @@ Version: 0.5.5
 Date: 2019-07-31
   Bugfixes:
     - additional check against invalid launch products #10
+    - support multiple launch products
 ---------------------------------------------------------------------------------------------------
 Version: 0.5.4
 Date: 2019-04-02
