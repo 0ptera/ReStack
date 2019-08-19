@@ -12,6 +12,8 @@ SelectItemByEntity("furnace", settings.startup["ReStack-furnace"].value)
 
 SelectItemByEntity("beacon", settings.startup["ReStack-beacon"].value)
 
+SelectItemByEntity("mining-drill", settings.startup["ReStack-mining-drill"].value)
+
 for _, item in pairs(data.raw["module"]) do
   ReStack_Items[item.name] = {stack_size = settings.startup["ReStack-modules"].value, type = "module"}
 end
