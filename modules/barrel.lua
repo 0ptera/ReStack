@@ -23,7 +23,6 @@ if barrel_capacity < 500 then -- each recipe should at least process the base 50
 else
   energy_per_recipe = math.floor(barrel_capacity / 250)
 end
--- log("[RS] barrel capacity: "..barrel_capacity.." (50), barrels per recipe: "..recipe_barrel_multiplier.." (1), energy per recipe: "..energy_per_recipe.." (0.2)")
 
 -- set barrel stack size
 if barrel_stack_size > 0 then
@@ -39,7 +38,6 @@ for fluid_name, fluid in pairs(data.raw.fluid) do
   local barrel_name = fluid_name.."-barrel"   -- naming convention is hardcoded in base\data-update.lua
   local barrel_item = data.raw.item[barrel_name]
   if barrel_item then
-  -- if (fluid.auto_barrel == nil or fluid.auto_barrel) and (fluid.icon or fluid.icons) then
     if barrel_stack_size > 0 then
       barrel_item.stack_size = barrel_stack_size
       log("[RS] Setting item."..tostring(barrel_item.name)..".stack_size "..barrel_stack_size)
@@ -55,8 +53,7 @@ for fluid_name, fluid in pairs(data.raw.fluid) do
           for _, ingredient in pairs(fill_recipe.ingredients) do
             if empty_barrels[ingredient.name] then
               ingredient.amount = ingredient.amount * recipe_barrel_multiplier
-            end
-            if ingredient.name == fluid_name then
+            elseif ingredient.name == fluid_name then
               ingredient.amount = barrel_capacity * recipe_barrel_multiplier
             end
           end
@@ -83,13 +80,35 @@ for fluid_name, fluid in pairs(data.raw.fluid) do
           for _, result in pairs(empty_recipe.results) do
             if empty_barrels[result.name] then
               result.amount = result.amount * recipe_barrel_multiplier
-            end
-            if result.name == fluid_name then
+            elseif result.name == fluid_name then
               result.amount = barrel_capacity * recipe_barrel_multiplier
             end
           end
         else
           log("[RS] ERROR: recipe.ingredients and recipe.results expected: "..serpent.block(empty_recipe) )
+        end
+      end
+    end
+
+    -- set barrel fuel_value
+    if fluid.fuel_value then
+      local energy_value, energy_unit = get_energy_value(fluid.fuel_value)
+      if energy_value and energy_value > 0 then
+        local fill_recipe = data.raw.recipe["fill-"..barrel_name]
+        if fill_recipe and fill_recipe.ingredients and fill_recipe.results then
+          local recipe_barrel_count, recipe_fluid_count
+          for _, ingredient in pairs(fill_recipe.ingredients) do
+            if empty_barrels[ingredient.name] then
+              recipe_barrel_count = ingredient.amount
+            elseif ingredient.name == fluid_name then
+              recipe_fluid_count = ingredient.amount
+            end
+          end
+          if recipe_fluid_count and recipe_barrel_count then
+            log("[RS] Setting item."..tostring(barrel_item.name)..".fuel_value "..tostring(barrel_item.fuel_value).." --> "..(energy_value * recipe_fluid_count / recipe_barrel_count)..energy_unit )
+            barrel_item.fuel_category = barrel_item.fuel_category or "chemical"
+            barrel_item.fuel_value = (energy_value * recipe_fluid_count / recipe_barrel_count)..energy_unit
+          end
         end
       end
     end

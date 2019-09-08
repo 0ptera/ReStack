@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.5.8
+Date: 2019-09-08
+  Features:
+    - generate barrel.fuel_value according to fluid.fuel_value
+  Changes:
+    - requires Optera's Library for fuel value calculations
+---------------------------------------------------------------------------------------------------
 Version: 0.5.7
 Date: 2019-08-27
   Features:
