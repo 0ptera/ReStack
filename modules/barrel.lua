@@ -18,7 +18,7 @@ local empty_barrels = {
 -- instead of 1 barrel ever 0.2 we default to 10 barrels every 2
 local energy_per_recipe = 2
 local recipe_barrel_multiplier = 10
-if barrel_capacity < 500 then -- each recipe should at least process the base 50L
+if barrel_capacity <= 500 then -- each recipe should at least process the base 50L
   recipe_barrel_multiplier = math.ceil(500 / barrel_capacity)
 else
   energy_per_recipe = math.floor(barrel_capacity / 250)
