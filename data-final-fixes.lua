@@ -45,11 +45,18 @@ for _, group in pairs(data.raw) do
   for item_name, stack_data in pairs(ReStack_Items) do
     local item = group[item_name]
     if item and item.stack_size then
-      if ReStack_Items[item_name].stack_size > 0 and (settings.startup["ReStack-include-launch-products"].value or not Launch_Products[item_name]) then
+      if ReStack_Items[item_name].stack_size > 0 then
         log("[RS] Setting "..tostring(stack_data.type).."."..tostring(item_name)..".stack_size "..item.stack_size.." -> "..stack_data.stack_size)
         item.stack_size = ReStack_Items[item_name].stack_size
-      -- else
-        -- log("[RS] Skipping "..tostring(stack_data.type).."."..tostring(item_name))
+        local launch_product_amount = Launch_Products[item_name]
+        if launch_product_amount and launch_product_amount > item.stack_size then
+          -- also adjust rocket silo output inventory
+          local launch_product_stacks = math.ceil(launch_product_amount / item.stack_size)
+          if launch_product_stacks > data.raw["rocket-silo"]["rocket-silo"].rocket_result_inventory_size then
+            log("[RS] Setting Rocket Silo output stack size "..data.raw["rocket-silo"]["rocket-silo"].rocket_result_inventory_size.." -> "..launch_product_stacks)
+            data.raw["rocket-silo"]["rocket-silo"].rocket_result_inventory_size = launch_product_stacks
+          end
+        end
       end
     end
   end

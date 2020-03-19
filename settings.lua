@@ -112,13 +112,13 @@ data:extend({
     minimum_value = 0,
     maximum_value = 10000,
   },
-  {
-    type = "bool-setting",
-    name = "ReStack-include-launch-products",
-    order = "cf",
-    setting_type = "startup",
-    default_value = false,
-  },
+  -- {
+  --   type = "bool-setting",
+  --   name = "ReStack-include-launch-products",
+  --   order = "cf",
+  --   setting_type = "startup",
+  --   default_value = false,
+  -- },
 
   ---- BARREL ----
 

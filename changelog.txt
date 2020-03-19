@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.6.1
+Date: 2020-03-19
+  Features:
+    - dynamically change rocket silo output inventory size according to science pack stack size
+  Changes:
+    - removed option to skip rocket launch products
+---------------------------------------------------------------------------------------------------
 Version: 0.6.0
 Date: 2020-01-21
   Features:
