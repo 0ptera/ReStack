@@ -76,7 +76,7 @@ for fluid_name, fluid in pairs(data.raw.fluid) do
           log("[RS] Setting empty recipe."..tostring(empty_recipe.name).." to "..recipe_barrel_multiplier.."x "..barrel_capacity.."L barrel every "..energy_per_recipe)
           empty_recipe.energy_required = energy_per_recipe
           for _, ingredient in pairs(empty_recipe.ingredients) do
-             if ingredient.name == fluid_name.."-barrel" then
+            if ingredient.name == fluid_name.."-barrel" then
               ingredient.amount = ingredient.amount * recipe_barrel_multiplier
             end
           end
