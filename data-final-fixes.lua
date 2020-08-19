@@ -22,6 +22,15 @@ require("modules.intermediate")
 require("modules.barrel")
 require("modules.ammo")
 
+function table_contains(table, element)
+  for _, value in pairs(table) do
+    if value == element then
+      return true
+    end
+  end
+  return false
+end
+
 
 -- get rocket_launch_product list
 for _, group in pairs(data.raw) do
@@ -42,7 +51,7 @@ end
 for _, group in pairs(data.raw) do
   for item_name, stack_data in pairs(ReStack_Items) do
     local item = group[item_name]
-    if item and item.stack_size then
+    if item and item.stack_size and (not item.flags or (item.flags and not table_contains(item.flags, "not-stackable"))) then
       if ReStack_Items[item_name].stack_size > 0 then
         log("[RS] Setting "..tostring(stack_data.type).."."..tostring(item_name)..".stack_size "..item.stack_size.." -> "..stack_data.stack_size)
         item.stack_size = ReStack_Items[item_name].stack_size
